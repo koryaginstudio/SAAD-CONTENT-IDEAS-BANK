@@ -2,6 +2,7 @@ name: Добавить идею
 description: Форма для добавления идеи в банк контента SAAD
 title: "[IDEA] "
 labels: ["idea"]
+
 body:
   - type: input
     id: idea_name

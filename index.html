@@ -258,43 +258,44 @@
   </main>
 
   <script>
-    // 1. Замени эти два значения на свои
-    const GITHUB_OWNER = 'koryaginstudio';
-    const GITHUB_REPO = 'SAAD-CONTENT-IDEAS-BANK';
+  const GITHUB_OWNER = 'koryaginstudio';
+  const GITHUB_REPO = 'SAAD-CONTENT-IDEAS-BANK';
 
-    const viewIdeas = document.getElementById('viewIdeas');
-    viewIdeas.href = `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}/issues?q=is%3Aissue+label%3Aidea+sort%3Acreated-desc`;
+  const viewIdeas = document.getElementById('viewIdeas');
 
-    document.getElementById('ideaForm').addEventListener('submit', function (event) {
-      event.preventDefault();
+  viewIdeas.href = `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}/issues?q=is%3Aissue%20label%3Aidea%20sort%3Acreated-desc`;
 
-      const data = Object.fromEntries(new FormData(event.target).entries());
-      const issueTitle = `Идея: ${data.title}`;
-      const issueBody = [
-        '## Идея',
-        data.title,
-        '',
-        '## Описание',
-        data.description,
-        '',
-        '## Тип контента',
-        data.type,
-        '',
-        '## CTA',
-        data.cta || 'Не указан',
-        '',
-        '## Автор',
-        data.author,
-        '',
-        '## Комментарий',
-        data.comment || 'Нет комментария',
-        '',
-        `Создано через форму: ${new Date().toLocaleString('ru-RU')}`
-      ].join('\n');
+  document.getElementById('ideaForm').addEventListener('submit', function (event) {
+    event.preventDefault();
 
-      const url = `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}/issues/new?labels=idea&title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}`;
-      window.open(url, '_blank', 'noopener');
-    });
-  </script>
-</body>
-</html>
+    const data = Object.fromEntries(new FormData(event.target).entries());
+
+    const issueTitle = `Идея: ${data.title}`;
+
+    const issueBody = [
+      '## Идея',
+      data.title,
+      '',
+      '## Описание',
+      data.description,
+      '',
+      '## Тип контента',
+      data.type,
+      '',
+      '## CTA',
+      data.cta || 'Не указан',
+      '',
+      '## Автор',
+      data.author,
+      '',
+      '## Комментарий',
+      data.comment || 'Нет комментария',
+      '',
+      `Создано через форму: ${new Date().toLocaleString('ru-RU')}`
+    ].join('\n');
+
+    const url = `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}/issues/new?labels=idea&title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}`;
+
+    window.open(url, '_blank', 'noopener');
+  });
+</script>

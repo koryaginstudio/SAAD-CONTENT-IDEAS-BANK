@@ -1,5 +1,5 @@
-name: Добавить идею
-description: Форма для добавления идеи в банк контента SAAD
+name: "Добавить идею"
+description: "Форма для добавления идеи в банк контента SAAD"
 title: "[IDEA] "
 labels: ["idea"]
 
@@ -7,58 +7,58 @@ body:
   - type: input
     id: idea_name
     attributes:
-      label: Название идеи
-      description: Коротко назови идею
-      placeholder: Например: Пост про вкус SAAD через летний вайб
+      label: "Название идеи"
+      description: "Коротко назови идею"
+      placeholder: "Например: Пост про вкус SAAD через летний вайб"
     validations:
       required: true
 
   - type: textarea
     id: idea_description
     attributes:
-      label: Описание идеи
-      description: Распиши суть идеи
-      placeholder: Что именно нужно показать, сказать или снять?
+      label: "Описание идеи"
+      description: "Распиши суть идеи"
+      placeholder: "Что именно нужно показать, сказать или снять?"
     validations:
       required: true
 
   - type: dropdown
     id: content_type
     attributes:
-      label: Тип контента
+      label: "Тип контента"
       options:
-        - Пост
-        - Reels / Shorts
-        - Stories
-        - Telegram-пост
-        - Разбор
-        - Идея для рубрики
-        - Другое
+        - "Пост"
+        - "Reels / Shorts"
+        - "Stories"
+        - "Telegram-пост"
+        - "Разбор"
+        - "Идея для рубрики"
+        - "Другое"
     validations:
       required: true
 
   - type: input
     id: cta
     attributes:
-      label: CTA
-      description: Что человек должен сделать после просмотра?
-      placeholder: Например: перейти в профиль, написать в ЛС, сохранить пост
+      label: "CTA"
+      description: "Что человек должен сделать после просмотра?"
+      placeholder: "Например: перейти в профиль, написать в ЛС, сохранить пост"
     validations:
       required: false
 
   - type: input
     id: author
     attributes:
-      label: Автор идеи
-      placeholder: Твое имя
+      label: "Автор идеи"
+      placeholder: "Твое имя"
     validations:
       required: true
 
   - type: textarea
     id: comment
     attributes:
-      label: Комментарий
-      description: Дополнительные мысли, референсы, уточнения
-      placeholder: Можно оставить пустым
+      label: "Комментарий"
+      description: "Дополнительные мысли, референсы, уточнения"
+      placeholder: "Можно оставить пустым"
     validations:
       required: false
